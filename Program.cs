@@ -10,7 +10,7 @@ namespace La_Tale_Extractor
             br = new BinaryReader(File.OpenRead(args[0]));
             br.BaseStream.Position = br.BaseStream.Length - 152;
             int table = br.ReadInt32() + br.ReadInt32();
-            short count = br.ReadInt16();
+            ushort count = br.ReadUInt16();
             br.ReadInt32();
 
             br.BaseStream.Position = table;
